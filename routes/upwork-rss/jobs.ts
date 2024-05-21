@@ -14,7 +14,7 @@ router.post("/set-alert", async (req, res) => {
     //  call get RSS on an interval of 3 minutes
     setInterval(() => UpworkRSS.getRSS(rssUrl, title), 180000);
     res.status(200).send({
-      message: `Alert (${title}) set to run at an interval of 5 minutes if job posts are less than 3 minutes old`,
+      message: `Alert (${title}) set to run at an interval of 3 minutes if job posts are less than 5 minutes old`,
     });
   } catch (err) {
     console.log(err);

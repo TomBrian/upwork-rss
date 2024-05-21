@@ -8,7 +8,7 @@ Content-Type: application/json
     "title":"A new wordpress job has been posted !"
 }
 
-####
+#### Run manually
 POST http://localhost:3000/upwork/jobs/get-posts HTTP/1.1
 Content-Type: application/json
 

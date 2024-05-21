@@ -4,10 +4,11 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import chalk from "chalk";
 import upworkJobs from "./routes/upwork-rss/jobs";
+import dotenv from "dotenv";
 
 // initialize express
 const app = express();
-
+dotenv.config();
 // middlewares
 app.use(cors());
 app.use(bodyParser.json());

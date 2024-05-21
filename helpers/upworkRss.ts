@@ -2,6 +2,7 @@ import * as cheerio from "cheerio";
 import chalk from "chalk";
 import moment from "moment";
 import axios from "axios";
+import { Email } from "./email";
 
 /**
  * A namespace for UpworkRSS related helper functions
@@ -63,12 +64,12 @@ export namespace UpworkRSS {
       const timeFromNow = post.postedOn;
       // guard clause to block the alert if the job is more than an hour old
       if (timeFromNow.indexOf("minutes") === -1) return;
-      // check if the job is less than 3 minutes old
+      // check if the job is less than 5 minutes old
       const minutes = parseInt(timeFromNow.split("minutes")[0]);
       console.log(minutes);
       console.log(typeof minutes);
       // send an alert if the job is less than 5 minutes old
-      if (minutes < 5 || minutes === 5) {
+      if (minutes < 10 || minutes === 10) {
         sendAlert(post, title);
       }
     });
@@ -85,5 +86,14 @@ export namespace UpworkRSS {
 
   export async function sendAlert(post: any, title: string): Promise<void> {
     console.log(title, post.title);
+    try {
+      await Email.sendEmail(
+        process.env.ALERT_EMAIL_ADDRESSES || "",
+        title,
+        post.title
+      );
+    } catch (error) {
+      console.log(chalk.red("An error occurred while sending the alert"));
+    }
   }
 }

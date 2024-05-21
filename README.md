@@ -9,7 +9,7 @@ This Node.js application utilizes Express to build a web API that extracts real-
 - Extracts job postings from Upwork RSS feeds based on user-defined search terms.
 - Runs a scheduled task every 3 minutes to fetch new postings.
 - Identifies jobs posted less than 3 minutes ago (considered "fresh").
-- Sends alerts for fresh job postings. Update the .env `ALERT_ADDRESSES` field to the list of emails you want the alerts to go to e.g email1@mailinator.com,email3@example.com
+- Sends alerts for fresh job postings. Update the .env `ALERT_EMAIL_ADDRESSES` field to the list of emails you want the alerts to go to e.g email1@mailinator.com,email3@example.com max 2 addresses
 
 **Tech Stack**
 
