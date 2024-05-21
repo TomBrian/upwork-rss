@@ -69,7 +69,7 @@ export namespace UpworkRSS {
       console.log(minutes);
       console.log(typeof minutes);
       // send an alert if the job is less than 5 minutes old
-      if (minutes < 10 || minutes === 10) {
+      if (minutes < 5 || minutes === 5) {
         sendAlert(post, title);
       }
     });
@@ -89,8 +89,8 @@ export namespace UpworkRSS {
     try {
       await Email.sendEmail(
         process.env.ALERT_EMAIL_ADDRESSES || "",
-        title,
-        post.title
+        "Posted just now " + post.title,
+        post.description
       );
     } catch (error) {
       console.log(chalk.red("An error occurred while sending the alert"));
