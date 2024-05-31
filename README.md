@@ -50,7 +50,7 @@ This section describes the available API endpoints for the Upwork Real-time Job 
 - **2. GET KEYWORDS**
 
 - **Method:** POST
-- **URL:** http://localhost:3000/upwork/jobs/set-alert
+- **URL:** http://localhost:3000/upwork/jobs/get-keywords
 
 **FOR MORE REQUEST DETAILS. PLEASE VIEW THE .http FILE IN THE ROOT FOLDER**
 - Upwork RSS Feed Documentation: (refer to Upwork API documentation for details on RSS feed access)
