@@ -1,4 +1,4 @@
-## Upwork Real-time Job Alert API
+## Upwork Real-time Job Alert and keyword research API
 
 **Introduction**
 
