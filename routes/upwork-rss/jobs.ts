@@ -40,4 +40,25 @@ router.post("/get-posts", async (req, res) => {
   }
 });
 
+router.post("/get-keywords", async (req, res) => {
+  const { rssUrl } = req.body;
+  const { title } = req.body;
+
+  try {
+    //  get jobs
+    const posts = await UpworkRSS.getRSS(rssUrl, title);
+    //  get keywords
+    const skills = posts.map((post) => post.skills);
+    const keywords = [...new Set(UpworkRSS.filterKeywords(skills.flat()))];
+    res.status(200).send({
+      keywords,
+    });
+  } catch (err) {
+    console.log(err);
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching the keywords" });
+  }
+});
+
 export default router;

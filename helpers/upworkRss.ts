@@ -27,7 +27,7 @@ export namespace UpworkRSS {
       // use moment to get the minutes/hours from now
       const datefromNow = moment(d).fromNow();
       const category = description.match(/<b>Category<\/b>: (.*?)<br \/>/);
-      const skills = description.match(/<b>Skills<\/b>: (.*?)<br \/>/);
+      const skills = description.match(/<b>Skills<\/b>:(.*?) \n<br \/>/);
       const country = description.match(/<b>Country<\/b>: (.*?)<br \/>/);
       const link = $(el).find("link").text();
       const pubDate = $(el).find("pubDate").text();
@@ -96,4 +96,31 @@ export namespace UpworkRSS {
       console.log(chalk.red("An error occurred while sending the alert"));
     }
   }
+
+  /**
+   * Keyword filters
+   * @param unfilteredKeywords;
+   * @returns the keywords
+   */
+
+  export const filterKeywords = (unfilteredKeywords: string[]): string[] => {
+    let keywords: string[];
+    console.log(unfilteredKeywords);
+    const tagFreeKeywords = unfilteredKeywords.map((keyword) => {
+      if (!keyword) return [];
+      const filteredKeyword = keyword.replace(/<[^>]*>/g, "");
+      // split the keywords by comma
+      const splitKeywords = filteredKeyword.split(",");
+      // remove white spaces from the keywords
+      const trimmedKeywords = splitKeywords.map((keyword) => keyword.trim());
+      // remove empty strings from the keywords
+      const cleanedKeywords = trimmedKeywords.filter(
+        (keyword) => keyword !== ""
+      );
+      // add the cleaned keywords to the keywords array
+      return cleanedKeywords;
+    });
+    keywords = tagFreeKeywords.flat();
+    return keywords;
+  };
 }

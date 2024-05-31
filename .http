@@ -16,3 +16,13 @@ Content-Type: application/json
     "rssUrl":"https://www.upwork.com/ab/feed/topics/rss?securityToken=f0a09e338b433cf51e1116de3ae02d26e8e530cfb6601732b302b16130800d1d194071cee4d8b2764e548ad318a9f2e06bc966f1bbf6dc9a666d4dc3aeeeea45&userUid=1330752025508855808&orgUid=1330752025513050113&topic=5504636",
     "title":"A new wordpress job has been posted !"
 }
+
+# GET Skills
+####
+POST http://localhost:3000/upwork/jobs/get-keywords HTTP/1.1
+Content-Type: application/json
+
+{
+    "rssUrl":"https://www.upwork.com/ab/feed/topics/rss?securityToken=f0a09e338b433cf51e1116de3ae02d26e8e530cfb6601732b302b16130800d1d194071cee4d8b2764e548ad318a9f2e06bc966f1bbf6dc9a666d4dc3aeeeea45&userUid=1330752025508855808&orgUid=1330752025513050113&topic=5504636",
+    "title":"A new wordpress job has been posted !"
+}
