@@ -51,7 +51,7 @@ router.post("/get-keywords", async (req, res) => {
     const skills = posts.map((post) => post.skills);
     const keywords = [...new Set(UpworkRSS.filterKeywords(skills.flat()))];
     res.status(200).send({
-      keywords,
+      keywords:keywords.toString(),
     });
   } catch (err) {
     console.log(err);
