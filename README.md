@@ -6,6 +6,7 @@ This Node.js application utilizes Express to build a web API that extracts real-
 
 **Features**
 
+- Extracts unique keywords from your job feed. You can use these keywords to create highly optimized profile description
 - Extracts job postings from Upwork RSS feeds based on user-defined search terms.
 - Runs a scheduled task every 3 minutes to fetch new postings.
 - Identifies jobs posted less than 3 minutes ago (considered "fresh").
