@@ -45,24 +45,13 @@ This section describes the available API endpoints for the Upwork Real-time Job 
 
 - **Method:** POST
 - **URL:** http://localhost:3000/upwork/jobs/set-alert
-- **Content-Type:** application/json
-- **Request Body:**
 
-```json
-{
-  "rssUrl": "https://www.upwork.com/ab/feed/topics/rss?securityToken=...",
-  "title": "A new job has been posted !"
-}
-- See .http for the complete list of endpoints
+- **2. GET KEYWORDS**
 
+- **Method:** POST
+- **URL:** http://localhost:3000/upwork/jobs/set-alert
 
-**Additional Notes**
-
-- This is a basic example and can be extended to include features like user authentication, search filters, and more robust alerting mechanisms.
-- Error handling and logging are essential for a production-ready application and should be implemented.
-
-**Further Resources:**
-
+**FOR MORE REQUEST DETAILS. PLEASE VIEW THE .http FILE IN THE ROOT FOLDER**
 - Upwork RSS Feed Documentation: (refer to Upwork API documentation for details on RSS feed access)
 - Node.js with MongoDB: [https://www.w3schools.com/nodejs/nodejs_mongodb.asp](https://www.w3schools.com/nodejs/nodejs_mongodb.asp) Incase you want to extend the features
 - Express.js Framework: [https://expressjs.com/](https://expressjs.com/)
